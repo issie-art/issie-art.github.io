@@ -1,0 +1,179 @@
+---
+layout: default
+---
+
+<article class="post-article">
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+        <div class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">
+                {{ page.date | date: "%Y年%m月%d日" }}
+            </time>
+            {% if page.categories %}
+            <span class="post-categories">
+                分类：{{ page.categories | join: ", " }}
+            </span>
+            {% endif %}
+        </div>
+    </header>
+    
+    <div class="post-content">
+        {{ content }}
+    </div>
+    
+    <footer class="post-footer">
+        <div class="post-navigation">
+            {% if page.previous %}
+            <a href="{{ page.previous.url | relative_url }}" class="prev-post">
+                ← {{ page.previous.title }}
+            </a>
+            {% endif %}
+            
+            {% if page.next %}
+            <a href="{{ page.next.url | relative_url }}" class="next-post">
+                {{ page.next.title }} →
+            </a>
+            {% endif %}
+        </div>
+    </footer>
+</article>
+
+<style>
+    .post-article {
+        background: white;
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        margin-bottom: 40px;
+    }
+    
+    .post-header {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+    }
+    
+    .post-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+    
+    .post-meta {
+        font-size: 14px;
+        color: #95a5a6;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .post-content {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #444;
+    }
+    
+    .post-content h2 {
+        font-size: 24px;
+        margin: 40px 0 20px;
+        color: #2c3e50;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #f0f0f0;
+    }
+    
+    .post-content h3 {
+        font-size: 20px;
+        margin: 30px 0 15px;
+        color: #34495e;
+    }
+    
+    .post-content p {
+        margin-bottom: 20px;
+    }
+    
+    .post-content ul, .post-content ol {
+        margin-bottom: 20px;
+        padding-left: 20px;
+    }
+    
+    .post-content li {
+        margin-bottom: 8px;
+    }
+    
+    .post-content code {
+        background: #f8f9fa;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        font-size: 14px;
+    }
+    
+    .post-content pre {
+        background: #2c3e50;
+        color: #ecf0f1;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 25px 0;
+    }
+    
+    .post-content blockquote {
+        border-left: 4px solid #3498db;
+        padding-left: 20px;
+        margin: 25px 0;
+        color: #555;
+        font-style: italic;
+    }
+    
+    .post-footer {
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid #eee;
+    }
+    
+    .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .prev-post, .next-post {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 15px;
+        max-width: 45%;
+    }
+    
+    .prev-post:hover, .next-post:hover {
+        text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+        .post-article {
+            padding: 25px;
+        }
+        
+        .post-title {
+            font-size: 26px;
+        }
+        
+        .post-meta {
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        
+        .post-navigation {
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .prev-post, .next-post {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+</style>
