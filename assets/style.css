@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    color: #333;
+    background: #fdfdfd;
+    line-height: 1.7;
+    max-width: 640px;
+    margin: auto;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.avatar {
+    width: 120px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 30px;
+}
+
+.full-intro p {
+    margin: 1em 0;
+    text-align: justify;
+}
+
+.posts {
+    list-style: none;
+    padding: 0;
+    margin-top: 2em;
+}
+
+.posts li {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px solid #eee;
+}
+
+footer {
+    margin-top: 3em;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+}
