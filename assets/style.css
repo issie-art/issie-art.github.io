@@ -53,17 +53,16 @@ footer {
 
 /* Timeline Styles */
 .timeline {
-    list-style: none;
-    padding-left: 0;
     margin: 1em 0;
 }
 
-.timeline li {
+.timeline p {
     padding: 8px 0;
     border-bottom: 1px solid #eee;
+    margin: 0;
 }
 
-.timeline li strong {
+.timeline .year {
     color: #666;
     margin-right: 8px;
 }
