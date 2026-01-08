@@ -15,7 +15,7 @@
     "email": "xxin778@163.com"
   },
   "description": "{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}",
-  "image": "{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.baseurl }}/assets/avatar.jpg{% endif %}",
+  "image": "{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.url }}/assets/avatar.jpg{% endif %}",
   "url": "{{ page.url | absolute_url }}",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -26,7 +26,7 @@
     "name": "Issie's Blog",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ site.baseurl }}/assets/avatar.jpg"
+      "url": "{{ site.url }}/assets/avatar.jpg"
     }
   },
   "keywords": "编程,阅读,思考,写作,创作",
@@ -60,7 +60,7 @@
             {% endif %}
         </div>
         <div class="back-home">
-            <a href="{{ site.baseurl }}/">← 返回首页</a>
+            <a href="{{ site.url }}/">← 返回首页</a>
         </div>
     </footer>
 </article>
