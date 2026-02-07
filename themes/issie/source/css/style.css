@@ -51,6 +51,21 @@ h3 {
     text-align: justify;
 }
 
+.intro {
+    margin: 2em 0;
+    text-align: justify;
+}
+
+.intro p {
+    margin: 0.8em 0;
+    color: #555;
+}
+
+.intro a {
+    color: #0066cc;
+    font-weight: 500;
+}
+
 .posts {
     list-style: none;
     padding: 0;
