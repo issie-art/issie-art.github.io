@@ -115,5 +115,4 @@ layout: page
 如果我的内容对你有帮助的话，可以通过以下方式联系我，你的驻足是对我最大的赞赏，Thank you!
 
 - 邮箱：[xxin778@163.com](mailto:xxin778@163.com)
-- 微信：issie_x
 
