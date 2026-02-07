@@ -1,0 +1,43 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "<%= config.title %>",
+  "url": "<%= config.url %>/",
+  "description": "<%= config.description %>",
+  "author": { "@type": "Person", "name": "<%= config.author %>", "email": "xxin778@163.com" }
+}
+</script>
+
+<img class="avatar" src="/assets/avatar.jpg" alt="avatar">
+<h3><%= config.title %></h3>
+<p class="subtitle"><%= config.subtitle %></p>
+
+<div class="full-intro">
+    <p>我叫吕俊欣（Issie Lv），2006 年出生于湖南邵阳。喜欢编程、阅读、思考、写作和一切与创造相关的东西。小时候的梦想是成为一名黑客，但最终却成为了一名程序员。</p>
+    <ul class="timeline">
+        <li><span class="year">2020年</span> 初中二年级离开了学校，同年五月份去了特训学校</li>
+        <li><span class="year">2021年</span> 去了电竞学校</li>
+        <li><span class="year">2022年</span> 开始接触编程</li>
+        <li><span class="year">2023年</span> 开始跑马拉松</li>
+        <li><span class="year">2024年</span> 开始健身，同年满 18 岁入职一家不知名物联网中型企业至今</li>
+        <li><span class="year">2025年</span> 开始对千万级用户量的系统负责，进行链路治理与演进</li>
+        <li><span class="year">2026年</span> 希望完成从执行者到问题定义者身份的转变</li>
+    </ul>
+    <p>未来希望能够打造一款属于自己的产品，为社会创造价值，现阶段正在努力构建工程基础，希望能做一个长期主义者。</p>
+    <p>想做这篇博客的原因是将自己的一些拙见与经验分享出去，帮助到其他人，同时写作也是我认为的一种很好的思考方式。</p>
+    <p>如果我的内容对你有帮助的话，可以通过以下方式联系我，你的驻足是对我最大的赞赏，Thank you!<br>
+        邮箱：<a href="mailto:xxin778@163.com">xxin778@163.com</a><br>
+        微信：issie_x
+    </p>
+</div>
+
+<h2>文章</h2>
+<ul class="posts">
+    <% site.posts.sort('date', -1).each(function(post){ %>
+    <li>
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+        <time><%= date(post.date, 'YYYY-MM-DD') %></time>
+    </li>
+    <% }); %>
+</ul>

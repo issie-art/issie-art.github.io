@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<%= page.description || config.description %>">
+    <meta name="author" content="<%= config.author %>">
+    <meta property="og:title" content="<%= page.title ? page.title + ' | ' + config.title : config.title %>">
+    <meta property="og:description" content="<%= page.description || config.description %>">
+    <meta property="og:url" content="<%= page.permalink || config.url %>">
+    <meta property="og:type" content="<%= is_post() ? 'article' : 'website' %>">
+    <link rel="canonical" href="<%= page.permalink || config.url %>">
+    <link rel="icon" type="image/jpeg" href="/assets/avatar.jpg">
+    <link rel="stylesheet" href="/css/style.css">
+    <title><%= page.title ? page.title + ' | ' + config.title : config.title %></title>
+</head>
+<body>
+<%- body %>
+<footer>
+    <div>© <%= date(Date.now(), 'YYYY') %> Issie</div>
+</footer>
+</body>
+</html>

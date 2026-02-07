@@ -1,0 +1,9 @@
+<h1>归档</h1>
+<ul class="posts">
+    <% site.posts.sort('date', -1).each(function(post){ %>
+    <li>
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+        <time><%= date(post.date, 'YYYY-MM-DD') %></time>
+    </li>
+    <% }); %>
+</ul>

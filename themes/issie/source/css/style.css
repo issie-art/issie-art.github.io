@@ -87,3 +87,44 @@ footer {
     color: #666;
     margin-right: 8px;
 }
+
+/* Tech Stack Styles */
+.tech-stack {
+    list-style: none;
+    padding-left: 0;
+    margin: 1.5em 0;
+}
+
+.tech-stack li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-label {
+    font-weight: bold;
+    color: #222;
+    font-size: 0.95em;
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 12px;
+}
+
+.tech-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 14px;
+    background: #0066cc;
+    border-radius: 2px;
+}
+
+.tech-tags {
+    color: #555;
+    font-size: 0.9em;
+    padding-left: 12px;
+}
