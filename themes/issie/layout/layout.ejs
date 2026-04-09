@@ -15,14 +15,21 @@
     <title><%= page.title ? page.title + ' | ' + config.title : config.title %></title>
 </head>
 <body>
+<div class="site-wrapper">
 <% if (!is_home()) { %>
 <nav class="site-nav">
     <a href="/">← 首页</a>
 </nav>
 <% } %>
+<main class="site-content<%= is_post() ? ' site-content--post' : '' %>">
 <%- body %>
+</main>
 <footer>
     <div>© <%= date(Date.now(), 'YYYY') %> Issie</div>
 </footer>
+</div>
+<% if (is_post()) { %>
+<script src="/js/toc.js" defer></script>
+<% } %>
 </body>
 </html>
