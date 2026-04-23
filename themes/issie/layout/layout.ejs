@@ -15,7 +15,12 @@
     <title><%= page.title ? page.title + ' | ' + config.title : config.title %></title>
 </head>
 <body>
-<div class="site-wrapper">
+<%
+  const headingMatches = is_post() && page.content ? page.content.match(/<h[2-6]\s/g) : null;
+  const headingCount = headingMatches ? headingMatches.length : 0;
+  const showToc = headingCount >= 2;
+%>
+<div class="site-wrapper<%= showToc ? ' has-toc' : '' %>">
 <% if (!is_home()) { %>
 <nav class="site-nav">
     <a href="/">← 首页</a>
