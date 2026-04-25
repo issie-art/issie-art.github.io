@@ -36,5 +36,9 @@
 <% if (is_post()) { %>
 <script src="/js/toc.js" defer></script>
 <% } %>
+<script src="/js/tracker.js"
+        data-endpoint="<%= config.tracker_endpoint || '' %>"
+        defer>
+</script>
 </body>
 </html>
