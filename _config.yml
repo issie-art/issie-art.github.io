@@ -20,7 +20,7 @@ date_format: YYYY-MM-DD
 theme: issie
 
 # Tracker (PV/UV)
-tracker_endpoint: http://101.96.200.228:3000/api/report
+tracker_endpoint: https://101.96.200.228:3000/api/report
 
 # Index Generator
 index_generator:
