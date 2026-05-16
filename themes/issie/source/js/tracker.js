@@ -8,24 +8,14 @@
   if (!endpoint) return;
 
   var data = {
+    access_time: Date.now(),
     uri: window.location.pathname
   };
 
-  var payload = JSON.stringify(data);
-
-  // sendBeacon — non-blocking, fires even on page unload
-  if (navigator.sendBeacon) {
-    var blob = new Blob([payload], { type: 'application/json' });
-    navigator.sendBeacon(endpoint, blob);
-    return;
-  }
-
-  // Fallback: fetch with keepalive
   fetch(endpoint, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: payload,
-    keepalive: true
+    body: JSON.stringify(data)
   }).catch(function () {
     // silent fail — tracking must never break the page
   });
